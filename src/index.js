@@ -1,17 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+    return (
+        <div className="container border mt-2">
+            <div className="row border-bottom">
+                <h1 className="dysplay-5 text-center">Seus pedidos</h1>
+            </div>
+            {/* .row*/}
+            <div className="row">
+                <div className="col-sm-8 col-md-6">
+                    {/* cartao do Bootstrap*/}
+                    {/*.card*/}
+                    <div className="card my-2">
+                        {/* .card.header.text-muted{22/04/2021} */}
+                        <div className="card header text-muted">22/04/2021</div>
+                        {/*.card-body.d-flex*/}
+                        <div className="card-body d-flex">
+                            <div className="d-flex align-items-center">
+                                <i className="fas fa-hdd fa-2x"></i>
+                            </div>
+                            <div className="flex grow-1 ms-2 border">
+                                <h4 className="text-center">SSD</h4>
+                                <p className="text-center">SSD Kingston SATA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+    <App/>,
+    document.querySelector('#root')
+)
